@@ -1,0 +1,267 @@
+/* Supprime les marges par défaut du body */
+body {
+    font-family: 'futura', medium;
+    margin: 0;
+    padding: 0;
+    background-color: #5D8AA7; /* Applique la couleur de fond */
+}
+
+/* Barre de navigation */
+header {
+    background-color: #5D8AA7; /* Garde la même couleur que le fond de la page */
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Assurez-vous que la barre est au-dessus de l'image */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-item {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none; /* Retire la soulignure des liens */
+    transition: color 0.3s ease; /* Transition pour le changement de couleur du texte */
+}
+
+.nav-item:hover {
+    color: #1F4D81; /* Le texte devient bleu #1F4D81 au survol */
+}
+
+/* Positions des éléments */
+#left {
+    text-align: left;
+    flex: 1;
+}
+
+#center {
+    text-align: center;
+    flex: 2;
+}
+
+#right {
+    text-align: right;
+    flex: 1;
+}
+
+/* Section principale */
+main {
+    margin-top: 70px; /* Ajoute un espace pour la barre de navigation */
+}
+
+/* Style des sections */
+.content-section {
+    text-align: center;
+    margin-bottom: 20px; /* Espace entre les sections */
+}
+
+/* Image de la première section */
+.hero-container {
+    position: relative; /* Permet de positionner le texte sur l'image */
+}
+
+.hero-image {
+    width: 100%; /* L'image prendra toute la largeur */
+    height: 100vh; /* La hauteur de l'image sera de la hauteur de la fenêtre */
+    object-fit: cover; /* Ajuste l'image pour qu'elle soit bien cadrée */
+    object-position: top; /* L'image sera recadrée depuis le haut */
+    margin-top: 0; /* Enlève l'espace entre l'image et la barre de navigation */
+}
+
+/* Texte sur l'image */
+.hero-text {
+    position: absolute;
+    top: 30%; /* Positionne le texte à 30% de la hauteur de l'image */
+    left: 20%; /* Positionne le texte à 20% de la largeur de l'image */
+    width: 60%; /* Le texte occupe 60% de la largeur de l'image (de 20% à 80%) */
+    height: 40%; /* Le texte occupe 40% de la hauteur de l'image (de 30% à 70%) */
+    font-family: 'Futura', sans-serif; 
+    font-size: 4rem; /* Taille du texte en fonction de l'écran */
+    font-weight: bold;
+    color: #1F4D81; /* Couleur du texte */
+    text-align: center;
+    line-height: 1.2;
+    text-shadow: 2px 2px 5px #FFFFFF, -2px -2px 5px #FFFFFF, 2px -2px 5px #FFFFFF, -2px 2px 5px #FFFFFF; /* Contour blanc autour du texte */
+}
+
+/* Titres sous l'image */
+.main-title {
+    font-family: 'Futura', sans-serif;
+    font-size: 4rem; /* Taille du titre */
+    font-weight: bold;
+    color: #1F4D81; /* Couleur du titre */
+    margin-top: 20px; /* Un petit espace au-dessus du titre */
+}
+
+/* Sous-titre, même taille que le titre */
+.subtitle {
+    font-family: 'Futura', sans-serif;
+    font-size: 3rem; /* Taille du sous-titre égale à celle du titre */
+    font-weight: bold;
+    color: #1F4D81; /* Vous pouvez ajuster la couleur si nécessaire */
+    margin-top: 0px; /* Réduit l'espace entre le titre et le sous-titre */
+}/* Conteneur pour l'image et le texte */
+.image-text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    text-align: left;
+    flex-wrap: wrap; /* Permet au contenu de se placer en colonne sur petits écrans */
+}
+
+/* Style pour l'image */
+.responsive-image {
+    width: 45%; /* L'image prend 45% de la largeur de l'écran */
+    height: auto; /* Conserve les proportions originales */
+    object-fit: contain; /* Ajuste l'image pour qu'elle soit bien cadrée */
+}
+
+/* Style pour le texte */
+.text-block {
+    width: 45%; /* Le texte prend 45% de la largeur de l'écran */
+    font-family: 'Futura', sans-serif;
+    font-size: 1.2rem;
+    color: #1F4D81;
+    line-height: 1.5;
+}
+
+/* Section Google Maps */
+.map-section {
+    display: flex;
+    justify-content: flex-end; /* Aligne la carte à droite */
+    margin: 20px 0; /* Espace autour de la section */
+}
+
+.map-container {
+    width: 80%; /* La carte occupe 30% de la largeur */
+    margin-right: 10%; /* Espace de 10% à droite */
+    margin-left: 10%;
+    height: 300px; /* Hauteur de la carte */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    border-radius: 8px; /* Bords arrondis */
+    overflow: hidden; /* Assure que le contenu reste à l'intérieur */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .map-container {
+        width: 80%; /* La carte prend 80% de la largeur sur petits écrans */
+        margin-right: 0; /* Enlève l'espace à droite */
+        margin-left: auto; /* Centre la carte */
+        margin-right: auto; /* Centre la carte */
+        height: 200px; /* Réduit la hauteur */
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .image-text-container {
+        flex-direction: column; /* Passe en colonne sur petits écrans */
+        align-items: center;
+        text-align: center; /* Centrer le texte */
+    }
+
+    .responsive-image, .text-block {
+        width: 90%; /* Chaque élément prend 90% de la largeur de l'écran */
+    }
+
+    .text-block {
+        margin-top: 15px; /* Ajoute un espace entre l'image et le texte */
+    }
+}
+
+@media (max-width: 480px) {
+    .text-block {
+        font-size: 1rem; /* Réduit la taille de la police sur très petits écrans */
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .nav-item {
+        font-size: 18px;
+    }
+
+    .hero-image {
+        height: 80vh; /* Ajuste la hauteur de l'image pour les écrans plus petits */
+    }
+
+    .hero-text {
+        font-size: 3rem; /* Ajuste la taille du texte sur les grands écrans */
+    }
+
+    /* Ajuste le titre et le sous-titre */
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 2.5rem; /* Taille plus grande pour le sous-titre */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Réduire la taille de la police dans la barre de navigation */
+    .nav-item {
+        font-size: 16px;
+    }
+
+    /* Ajuster la taille des images et les sections */
+    .hero-image {
+        height: 70vh; /* L'image occupe moins de hauteur */
+    }
+
+    /* Espacement entre les sections */
+    .content-section {
+        margin-bottom: 15px;
+    }
+
+    /* Ajuster les titres */
+    .main-title {
+        font-size: 2rem; /* Réduit la taille du titre */
+    }
+
+    .subtitle {
+        font-size: 1.5rem; /* Augmente la taille du sous-titre */
+    }
+
+    /* Ajuster le texte sur l'image */
+    .hero-text {
+        font-size: 2.5rem; /* Plus petit sur les écrans plus petits */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Pour les très petits écrans */
+    .hero-image {
+        height: 60vh; /* L'image occupe encore moins de hauteur */
+    }
+
+    /* Réduire davantage la taille de la police */
+    .nav-item {
+        font-size: 14px;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem; /* Taille du sous-titre pour les petits écrans */
+    }
+
+    /* Ajuster le texte sur l'image */
+    .hero-text {
+        font-size: 2rem; /* Encore plus petit sur les petits écrans */
+    }
+}
